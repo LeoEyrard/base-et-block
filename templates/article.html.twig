@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+
+<!---je recuper les informatioon du fichier pagecontroller--->
+{% if article.isPublished %}
+    <div id="center" ><h1>{{ article.title }}</h1></div>
+    <div id="center" ><p>{{ article.content }}</p></div>
+    <div id="center" ><img src="{{ article.image }}" /></div>
+{% endif %}
+
+{% endblock content %}

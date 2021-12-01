@@ -1,0 +1,49 @@
+<html>
+<head>
+<title>profile</title>
+<meta charset="utf=8">
+<link rel="stylesheet" href="{{ asset('css/style.css') }}">
+<script src="../public/css/script.js"></script>
+</head>
+<body>
+<div id="debut"></div>
+
+<nav>
+<div id="logo">market+</div>
+<ul>
+<a href="index.html"><li>home</li></a>
+<li>achats</li>
+<li>contact</li>
+<div id="fond"></div>
+</ul>
+</nav>
+
+
+<!---je recuper les informatioon du fichier pagecontroller--->
+{% for article in articles %}
+    {% if article.isPublished %}
+        <div id="center" ><h1>{{ article.title }}</h1></div>
+        <div id="center" ><p>{{ article.content }}</p></div>
+        <div id="center" ><img src="{{ article.image }}" /></div>
+    {% endif %}
+{% endfor %}
+
+{% extends "base.html" %}
+
+{% block title %}Index{% endblock %}
+{% block head %}
+    {{ parent() }}
+    <style type="text/css">
+        .important { color: #336699; }
+    </style>
+{% endblock %}
+{% block content %}
+    <h1>Index</h1>
+    <p class="important">
+        Welcome on my awesome homepage.
+    </p>
+{% endblock %}
+
+<div id="fin"></div>
+</body>
+</html>
